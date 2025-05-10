@@ -1,0 +1,8 @@
+上传的文件到 Git 暂存区：
+git add filename
+
+提交这些文件到本地仓库
+git commit -m "Initial commit"
+
+将本地仓库的提交推送到 GitHub 上的远程仓库
+git push -u origin main
