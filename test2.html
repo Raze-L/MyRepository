@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/* 初始设置内容区域为隐藏状态 */
+.content {
+    overflow: hidden; /* 隐藏溢出内容 */
+    max-height: 0; /* 初始最大高度为0 */
+    transition: transform 0.5s ease-in-out; /* 设置过渡效果 */
+    transform: translateY(100%); /* 将内容向下移动出视口 */
+    background-color: #f1f1f1; /* 背景颜色 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid #ccc; /* 边框 */
+    opacity: 0; /* 初始透明度为0 */
+}
+.mainbox{
+            display: flex;
+            max-height: 0;
+            transition: transform 0.5s ease-in-out;
+            transform: translateY(100%);
+            opacity: 0; /* 初始透明度为0 */
+            height: 60vh;
+            width: 20vw;
+            border: none;
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            margin-top: 18vh;
+            box-shadow:  0 0 30px rgb(0, 0, 0);
+            padding: 0;
+            overflow: hidden;
+   }
+.loginbackground2{
+                display: flex;
+                max-height: none;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+                padding: 0;
+                width: 180%;
+                height: 100%;
+                background-color: aliceblue;
+                border: none;
+                border-radius: 100% 100% 0 0;
+                overflow: hidden;                       
+            }
+ 
+/* 当复选框被选中时，显示内容区域 */
+.toggle-checkbox:checked ~ .mainbox {
+    max-height: 60vh; /* 设置内容区域的最大高度，以适应内容（这里使用固定值作为示例） */
+    transform: translateY(0); /* 将内容移回视口内 */
+    opacity: 1; /* 设置透明度为1，使内容可见 */
+}
+ 
+/* 隐藏复选框，因为它只是用于控制显示/隐藏逻辑 */
+.toggle-checkbox {
+    display: none; /* 隐藏复选框 */
+}
+ 
+/* 可选：为标签添加样式 */
+.toggle-label {
+    cursor: pointer; /* 鼠标悬停时显示为手形 */
+    display: inline-block; /* 将标签设置为内联块级元素 */
+    padding: 10px; /* 内边距 */
+    background-color: #007BFF; /* 背景颜色 */
+    color: white; /* 文字颜色 */
+    text-align: center; /* 文字居中对齐 */
+    border-radius: 5px; /* 边框圆角 */
+    user-select: none; /* 禁止用户选择文字 */
+}
+ 
+/* 可选：为标签添加悬停效果 */
+.toggle-label:hover {
+    background-color: #0056b3; /* 鼠标悬停时改变背景颜色 */
+}
+    </style>
+</head>
+<body>
+    <!-- 创建一个标签，用于触发隐藏复选框的选中状态变化 -->
+    <label for="toggle" class="toggle-label">Show/Hide Content</label>
+    <!-- 隐藏的复选框，用于控制内容的显示与隐藏 -->
+    <input type="checkbox" id="toggle" class="toggle-checkbox">
+    <!-- 要显示或隐藏的内容区域 -->
+    <div class="mainbox">
+        <div class="loginbackground2">
+        <p>This is the hidden content that will slide up.</p>
+    </div></div>
+</body>
+</html>
